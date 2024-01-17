@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "675327389300",
+    "firebase_url": "https://tbc-fitness-app-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "tbc-fitness-app",
+    "storage_bucket": "tbc-fitness-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:675327389300:android:11a7bfd7a0195ec8a7eb21",
+        "android_client_info": {
+          "package_name": "com.example.tbc_midterm_project"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAGJbqsM0jYQ1zq6_ugEXz5jbBoxIUVKhA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,4 +1,8 @@
-package com.example.tbc_midterm_project.domain.use_case
+package com.example.tbc_midterm_project.domain.use_case.validator
 
-class PasswordValidatorUseCase {
+import javax.inject.Inject
+
+class PasswordValidatorUseCase @Inject constructor(){
+
+    operator fun invoke(password: String): Boolean = password.length > 6
 }
