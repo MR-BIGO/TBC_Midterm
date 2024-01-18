@@ -25,15 +25,13 @@ class HandleAuth {
             } else {
                 emit(Resource.Error("Authentication failed"))
             }
-        } catch (e: FirebaseAuthEmailException) {
-            emit(Resource.Error(e.message ?: ""))
-        }catch (e: FirebaseAuthInvalidCredentialsException){
+        } catch (e: FirebaseAuthInvalidCredentialsException) {
             emit(Resource.Error(e.message ?: "Unknown exception"))
-        }catch (e: FirebaseAuthInvalidUserException){
+        } catch (e: FirebaseAuthInvalidUserException) {
             emit(Resource.Error(e.message ?: "User not found"))
-        }catch (e: FirebaseAuthUserCollisionException){
+        } catch (e: FirebaseAuthUserCollisionException) {
             emit(Resource.Error(e.message ?: "User already exists"))
-        }catch (e: Throwable){
+        } catch (e: Throwable) {
             emit(Resource.Error(e.message ?: "Unknown Error"))
         }
         emit(Resource.Loading(false))

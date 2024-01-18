@@ -7,7 +7,6 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class CollectionFragment : BaseFragment<FragmentCollectionBinding>(FragmentCollectionBinding::inflate) {
     override fun setUp() {
-        TODO("Not yet implemented")
     }
 
 }

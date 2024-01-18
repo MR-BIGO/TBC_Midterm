@@ -7,7 +7,6 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class OffersFragment : BaseFragment<FragmentOffersBinding>(FragmentOffersBinding::inflate) {
     override fun setUp() {
-        TODO("Not yet implemented")
     }
 
 }

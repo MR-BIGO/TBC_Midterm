@@ -14,8 +14,10 @@ class RegisterUserUseCase @Inject constructor(
     private val validateEmail: EmailValidatorUseCase,
     private val validatePassword: PasswordValidatorUseCase
 ) {
-    suspend operator fun invoke(user: User): Flow<Resource<Boolean>> {
+    suspend operator fun invoke(user: User, repeatPassword: String): Flow<Resource<Boolean>> {
         if (!validateEmail(user.email)) return flowOf(Resource.Error("Please, Enter a valid Email address"))
+
+        else if(user.password != repeatPassword) return flowOf(Resource.Error("Passwords do not match"))
 
         else if (!validatePassword(user.password)) return flowOf(Resource.Error("Password should contain more than 6 letters!"))
 

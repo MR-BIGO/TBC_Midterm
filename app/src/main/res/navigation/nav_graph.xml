@@ -37,7 +37,11 @@
         android:id="@+id/registerFragment"
         android:name="com.example.tbc_midterm_project.presentation.screen.register.RegisterFragment"
         android:label="fragment_register"
-        tools:layout="@layout/fragment_register" />
+        tools:layout="@layout/fragment_register" >
+        <action
+            android:id="@+id/action_registerFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.example.tbc_midterm_project.presentation.screen.home.HomeFragment"
@@ -55,6 +59,9 @@
         <action
             android:id="@+id/action_homeFragment_to_loginFragment"
             app:destination="@id/loginFragment" />
+        <argument
+            android:name="isAuthed"
+            app:argType="boolean" />
     </fragment>
     <fragment
         android:id="@+id/calculatorFragment"

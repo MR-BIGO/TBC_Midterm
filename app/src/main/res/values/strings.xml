@@ -10,5 +10,11 @@
     <string name="register">Register</string>
     <string name="repeat_password">Repeat Password</string>
     <string name="already_account">Already have an account? <u>Sign in here!</u></string>
-    <string name="continue_offline"><u>Continue offline</u></string>
+    <string name="continue_guest"><u>Continue as a guest</u></string>
+    <string name="bmi_calculator">BMI Calculator</string>
+    <string name="offers">Offers</string>
+    <string name="library">Library</string>
+    <string name="collection">Collection</string>
+    <string name="sign_in">Sign In</string>
+    <string name="log_out">Log Out</string>
 </resources>
