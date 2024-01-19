@@ -1,47 +1,57 @@
 package com.example.tbc_midterm_project.presentation.screen.home
 
 import androidx.appcompat.app.AlertDialog
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.tbc_midterm_project.R
 import com.example.tbc_midterm_project.databinding.FragmentHomeBinding
+import com.example.tbc_midterm_project.presentation.event.home.HomeEvents
 import com.example.tbc_midterm_project.presentation.screen.base.BaseFragment
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::inflate) {
 
     private val args: HomeFragmentArgs by navArgs()
+    private val viewModel: HomeFragmentViewModel by viewModels()
+
     override fun setUp() {
         listeners()
         setUpSignInLogOutBtn()
+        bindObservers()
     }
 
     private fun listeners() {
         with(binding) {
             if (args.isAuthed) {
-                btnOffers.setOnClickListener {
-                    findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToOffersFragment())
-                }
                 btnLibrary.setOnClickListener {
-                    findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToCollectionFragment())
+                    viewModel.onEvent(HomeEvents.CollectionPressed)
                 }
                 btnLogOutSignIn.setOnClickListener {
-                    showAlertDialog("Are you sure you want to Log out?")
+                    showAlertDialog("Are you sure you want to Log out?", HomeEvents.LogOutPressed)
                 }
             } else {
-                btnOffers.setOnClickListener {
-                    showAlertDialog("You are currently Logged out. Do you wish to sign in?")
-                }
                 btnLibrary.setOnClickListener {
-                    showAlertDialog("You are currently Logged out. Do you wish to sign in?")
+                    showAlertDialog(
+                        "You are currently Logged out. Do you wish to sign in?",
+                        HomeEvents.SignInPressed
+                    )
                 }
                 btnLogOutSignIn.setOnClickListener {
-                    showAlertDialog("Are you sure you want to Sign in?")
+                    showAlertDialog("Are you sure you want to Sign in?", HomeEvents.SignInPressed)
                 }
             }
+            btnOffers.setOnClickListener {
+                viewModel.onEvent(HomeEvents.OffersPressed)
+            }
+
             btnCalculator.setOnClickListener {
-                findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToCalculatorFragment())
+                viewModel.onEvent(HomeEvents.CalculatorPressed)
             }
         }
     }
@@ -54,17 +64,48 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
         }
     }
 
-    private fun showAlertDialog(title: String) {
+    private fun navigateToOffers() {
+        findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToOffersFragment())
+    }
+
+    private fun navigateToCalculator() {
+        findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToCalculatorFragment())
+    }
+
+    private fun navigateToCollection() {
+        findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToCollectionFragment())
+    }
+
+    private fun navigateToLogin() {
+        findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToLoginFragment())
+    }
+
+    private fun handleEvent(event: HomeFragmentViewModel.HomeNavigationEvents) {
+        when (event) {
+            is HomeFragmentViewModel.HomeNavigationEvents.NavigateToOffers -> navigateToOffers()
+            is HomeFragmentViewModel.HomeNavigationEvents.NavigateToCalculator -> navigateToCalculator()
+            is HomeFragmentViewModel.HomeNavigationEvents.NavigateToCollection -> navigateToCollection()
+            is HomeFragmentViewModel.HomeNavigationEvents.NavigateToLogin -> navigateToLogin()
+        }
+    }
+
+    private fun bindObservers() {
+        viewLifecycleOwner.lifecycleScope.launch {
+            repeatOnLifecycle(Lifecycle.State.STARTED) {
+                viewModel.uiEvent.collect {
+                    handleEvent(it)
+                }
+            }
+        }
+    }
+
+    private fun showAlertDialog(title: String, event: HomeEvents) {
         val builder = AlertDialog.Builder(requireContext())
         builder.apply {
             setTitle(title)
             setCancelable(true)
             setPositiveButton("Yes") { _, _ ->
-                if (args.isAuthed) {
-
-                } else {
-                    findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToLoginFragment())
-                }
+                viewModel.onEvent(event)
             }
             setNeutralButton("cancel") { dialog, _ ->
                 dialog.dismiss()

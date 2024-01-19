@@ -8,4 +8,10 @@
     <color name="dirty_grey">#ff443e67</color>
     <color name="black_half">#50000000</color>
     <color name="white_half">#50FFFFFF</color>
+    <color name="first_shadow">#70765554</color>
+    <color name="second_shadow">#50765554</color>
+    <color name="light_color">#D68d71</color>
+    <color name="center_color">#D6886c</color>
+    <color name="bottom_color">#C37f66</color>
+    <color name="blackish_blue">#292d43</color>
 </resources>

@@ -1,14 +1,121 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/fragment_background_gradient"
     tools:context=".presentation.screen.calculator.CalculatorFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/btnBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:background="@null"
+        android:src="@drawable/ic_back"
+        android:tint="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-</FrameLayout>
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvEnterDetails"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/enter_your_details"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/etSex"
+        android:layout_width="140dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="50dp"
+        android:backgroundTint="@color/white"
+        android:hint="@string/sex"
+        android:textAlignment="center"
+        android:textColorHint="@color/white_half"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@id/etAge"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvEnterDetails" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/etAge"
+        android:layout_width="140dp"
+        android:layout_height="50dp"
+        android:backgroundTint="@color/white"
+        android:hint="@string/age"
+        android:inputType="numberDecimal"
+        android:textAlignment="center"
+        android:textColorHint="@color/white_half"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/etSex"
+        app:layout_constraintTop_toTopOf="@id/etSex" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/etHeight"
+        android:layout_width="140dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="30dp"
+        android:backgroundTint="@color/white"
+        android:hint="@string/height_cm"
+        android:textAlignment="center"
+        android:textColorHint="@color/white_half"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@id/etWeight"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/etSex" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/etWeight"
+        android:layout_width="140dp"
+        android:layout_height="50dp"
+        android:backgroundTint="@color/white"
+        android:hint="@string/weight_kg"
+        android:inputType="numberDecimal"
+        android:textAlignment="center"
+        android:textColorHint="@color/white_half"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/etHeight"
+        app:layout_constraintTop_toTopOf="@id/etHeight" />
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnCalculate"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/background_shadows_button"
+        android:shadowColor="@color/white"
+        android:shadowRadius="8"
+        android:text="@string/calculate"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/etHeight" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvAnswerItem"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="30dp"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnCalculate"
+        app:spanCount="2"
+        tools:itemCount="4"
+        tools:listitem="@layout/answer_item" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

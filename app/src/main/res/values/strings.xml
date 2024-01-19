@@ -17,4 +17,16 @@
     <string name="collection">Collection</string>
     <string name="sign_in">Sign In</string>
     <string name="log_out">Log Out</string>
+    <string name="enter_your_details">Enter Your Details</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="sex">sex</string>
+    <string name="age">age</string>
+    <string name="height_cm">height (cm)</string>
+    <string name="weight_kg">weight (kg)</string>
+    <string name="calculate">Calculate</string>
+    <string-array name="sex">
+        <item>@string/male</item>
+        <item>@string/female</item>
+    </string-array>
 </resources>
