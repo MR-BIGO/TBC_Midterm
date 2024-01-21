@@ -4,6 +4,7 @@ import com.example.tbc_midterm_project.data.common.Resource
 import com.example.tbc_midterm_project.presentation.model.calculator.AnswerItem
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
+import java.math.RoundingMode
 import javax.inject.Inject
 
 class CalculatorUseCase @Inject constructor() {
@@ -46,23 +47,23 @@ class CalculatorUseCase @Inject constructor() {
     }
 
     private fun calculateBmi(weight: Double, height: Double): Double {
-        return weight / ((height / 100) * (height / 100))
+        return (weight / ((height / 100) * (height / 100))).toBigDecimal().setScale(1, RoundingMode.DOWN).toDouble()
     }
 
     private fun calculateHeartRate(age: Int): Double {
-        return 220.0 - age
+        return (220.0 - age).toBigDecimal().setScale(1, RoundingMode.DOWN).toDouble()
     }
 
     private fun calculateHealthyWeight(sex: String, height: Double): Double {
         return if (sex == "Male") {
-            50 + (0.91 * (height - 152.4))
+            (50 + (0.91 * (height - 152.4))).toBigDecimal().setScale(1, RoundingMode.DOWN).toDouble()
         } else {
-            45.5 + (0.91 * (height - 152.4))
+            (45.5 + (0.91 * (height - 152.4))).toBigDecimal().setScale(1, RoundingMode.DOWN).toDouble()
         }
     }
 
     private fun calculateWaterIntake(weight: Double): Double {
-        return weight / 30
+        return (weight / 30).toBigDecimal().setScale(1, RoundingMode.DOWN).toDouble()
     }
 
     private fun calculateBmiMessage(bmi: Double): String {

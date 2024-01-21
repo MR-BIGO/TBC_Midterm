@@ -7,6 +7,5 @@ import kotlinx.coroutines.flow.Flow
 interface IFirebaseAuthenticatorRepository {
     suspend fun loginUser(user: User): Flow<Resource<Boolean>>
     suspend fun registerUser(user: User): Flow<Resource<Boolean>>
-
     fun logOutUser()
 }
