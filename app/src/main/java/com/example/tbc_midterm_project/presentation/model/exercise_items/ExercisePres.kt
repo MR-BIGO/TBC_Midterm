@@ -1,6 +1,6 @@
-package com.example.tbc_midterm_project.domain.model
+package com.example.tbc_midterm_project.presentation.model.exercise_items
 
-data class Exercise(
+data class ExercisePres(
     val desc: String? = "",
     val id: Int? = 0,
     val image: String? = "",

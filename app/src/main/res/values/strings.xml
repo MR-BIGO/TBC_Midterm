@@ -25,6 +25,8 @@
     <string name="height_cm">height (cm)</string>
     <string name="weight_kg">weight (kg)</string>
     <string name="calculate">Calculate</string>
+    <string name="packages_offered">Packages offered</string>
+    <string name="exercises">Exercises</string>
     <string-array name="sex">
         <item>@string/male</item>
         <item>@string/female</item>

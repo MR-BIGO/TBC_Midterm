@@ -77,5 +77,21 @@
         android:id="@+id/offersFragment"
         android:name="com.example.tbc_midterm_project.presentation.screen.offers.OffersFragment"
         android:label="fragment_offers"
-        tools:layout="@layout/fragment_offers" />
+        tools:layout="@layout/fragment_offers" >
+        <action
+            android:id="@+id/action_offersFragment_to_exercisesFragment"
+            app:destination="@id/exercisesFragment" />
+        <action
+            android:id="@+id/action_offersFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/exercisesFragment"
+        android:name="com.example.tbc_midterm_project.presentation.screen.exercises.ExercisesFragment"
+        android:label="fragment_exercises"
+        tools:layout="@layout/fragment_exercises" >
+        <argument
+            android:name="id"
+            app:argType="integer" />
+    </fragment>
 </navigation>

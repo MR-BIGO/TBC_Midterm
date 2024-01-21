@@ -34,7 +34,7 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>(FragmentLoginBinding::i
                         LoginEvents.LoginPressed(
                             etEmail.text.toString(),
                             etPassword.text.toString(),
-                            //  checkRemember.isChecked
+                              checkRemember.isChecked
                         )
                     )
                 } else {

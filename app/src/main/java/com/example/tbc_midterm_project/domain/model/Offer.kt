@@ -1,10 +1,10 @@
 package com.example.tbc_midterm_project.domain.model
 
 data class Offer (
-    val exercises: List<Exercise>,
-    val id: Int,
-    val image: String,
-    val isBookmarked: Boolean,
-    val nExercises: Int,
-    val name: String
+    val exercises: List<Exercise>? = null,
+    val id: Int? = 0,
+    val image: String? = "",
+    val isBookmarked: Boolean? = null,
+    val nExercises: Int? = 0,
+    val name: String? = ""
 )

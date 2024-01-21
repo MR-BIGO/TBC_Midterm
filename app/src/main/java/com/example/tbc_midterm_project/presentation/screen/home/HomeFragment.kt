@@ -29,19 +29,10 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
     private fun listeners() {
         with(binding) {
             if (args.isAuthed) {
-                btnLibrary.setOnClickListener {
-                    viewModel.onEvent(HomeEvents.CollectionPressed)
-                }
                 btnLogOutSignIn.setOnClickListener {
                     showAlertDialog("Are you sure you want to Log out?", HomeEvents.LogOutPressed)
                 }
             } else {
-                btnLibrary.setOnClickListener {
-                    showAlertDialog(
-                        "You are currently Logged out. Do you wish to sign in?",
-                        HomeEvents.SignInPressed
-                    )
-                }
                 btnLogOutSignIn.setOnClickListener {
                     showAlertDialog("Are you sure you want to Sign in?", HomeEvents.SignInPressed)
                 }
@@ -72,10 +63,6 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
         findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToCalculatorFragment())
     }
 
-    private fun navigateToCollection() {
-        findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToCollectionFragment())
-    }
-
     private fun navigateToLogin() {
         findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToLoginFragment())
     }
@@ -84,7 +71,6 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
         when (event) {
             is HomeFragmentViewModel.HomeNavigationEvents.NavigateToOffers -> navigateToOffers()
             is HomeFragmentViewModel.HomeNavigationEvents.NavigateToCalculator -> navigateToCalculator()
-            is HomeFragmentViewModel.HomeNavigationEvents.NavigateToCollection -> navigateToCollection()
             is HomeFragmentViewModel.HomeNavigationEvents.NavigateToLogin -> navigateToLogin()
         }
     }

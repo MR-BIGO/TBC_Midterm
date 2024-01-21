@@ -11,7 +11,7 @@
         android:id="@+id/ivLogo"
         android:layout_width="200dp"
         android:layout_height="200dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="50dp"
         android:src="@mipmap/fitness_app_logo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -32,13 +32,13 @@
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnOffers"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_width="170dp"
+        android:layout_height="200dp"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="140dp"
+        android:layout_marginTop="120dp"
         android:layout_marginEnd="20dp"
         android:background="@drawable/background_clickables"
-        android:drawableStart="@drawable/ic_scale"
+        android:drawableStart="@drawable/ic_dumbbell"
         android:drawablePadding="20dp"
         android:paddingStart="10dp"
         android:paddingEnd="10dp"
@@ -47,35 +47,16 @@
         android:textAllCaps="false"
         android:textColor="@color/white"
         android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@id/btnCalculator"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/ivLogo" />
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btnLibrary"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="20dp"
-        android:background="@drawable/background_clickables"
-        android:drawableStart="@drawable/ic_scale"
-        android:drawablePadding="20dp"
-        android:paddingStart="10dp"
-        android:paddingEnd="10dp"
-        android:text="@string/collection"
-        android:textAlignment="viewStart"
-        android:textAllCaps="false"
-        android:textColor="@color/white"
-        android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btnOffers" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnCalculator"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_width="170dp"
+        android:layout_height="200dp"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
         android:background="@drawable/background_clickables"
         android:drawableStart="@drawable/ic_scale"
@@ -87,8 +68,9 @@
         android:textAllCaps="false"
         android:textColor="@color/white"
         android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btnLibrary" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/btnOffers"
+        app:layout_constraintTop_toTopOf="@id/btnOffers" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
