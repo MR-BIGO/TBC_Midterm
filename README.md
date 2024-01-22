@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="https://github.com/MR-BIGO/TBC_Midterm/assets/74029793/2f9ace3f-859f-46cf-a8ac-e5cea6f95d9d" height="300" width="300" />
+</p>
+
 ## Fitness App
 Fitness App is an Android application for easily finding exercises to satisfy your needs.
 The app comes with built in BMI calculator for checking and monitoring some of your usefull details.
