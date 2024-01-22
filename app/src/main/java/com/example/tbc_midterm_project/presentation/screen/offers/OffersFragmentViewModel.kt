@@ -35,7 +35,7 @@ class OffersFragmentViewModel @Inject constructor(
 
     fun onEvent(event: OfferEvents) {
         when (event) {
-            is OfferEvents.OfferPressed -> handleOfferedPressed(event.id)
+            is OfferEvents.OfferPressed -> handleOfferedPressed(event.id, event.auth)
             is OfferEvents.ResetError -> updateError(null)
             is OfferEvents.BackPressed -> navigateBack()
             is OfferEvents.LogInPressed -> navigateToLogIn()
@@ -62,19 +62,17 @@ class OffersFragmentViewModel @Inject constructor(
         }
     }
 
-    private fun handleOfferedPressed(id: Int) {
+    private fun handleOfferedPressed(id: Int, auth: Boolean) {
         viewModelScope.launch {
-            getStateUseCase().collect{
-                if (it){
-                    navigateToExercises(id)
-                }else{
-                    _uiEvent.emit(NavigationEvents.ShowAlertForSignedOut)
-                }
+            if (auth) {
+                navigateToExercises(id)
+            } else {
+                _uiEvent.emit(NavigationEvents.ShowAlertForSignedOut)
             }
         }
     }
 
-    private fun navigateToLogIn(){
+    private fun navigateToLogIn() {
         viewModelScope.launch {
             _uiEvent.emit(NavigationEvents.NavigateToLogIn)
         }
@@ -100,7 +98,7 @@ class OffersFragmentViewModel @Inject constructor(
     sealed class NavigationEvents {
         data class NavigateToExercises(val id: Int) : NavigationEvents()
         data object NavigateBack : NavigationEvents()
-        data object ShowAlertForSignedOut: NavigationEvents()
-        data object NavigateToLogIn: NavigationEvents()
+        data object ShowAlertForSignedOut : NavigationEvents()
+        data object NavigateToLogIn : NavigationEvents()
     }
 }

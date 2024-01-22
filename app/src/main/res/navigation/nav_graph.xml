@@ -84,6 +84,9 @@
         <action
             android:id="@+id/action_offersFragment_to_loginFragment"
             app:destination="@id/loginFragment" />
+        <argument
+            android:name="auth"
+            app:argType="boolean" />
     </fragment>
     <fragment
         android:id="@+id/exercisesFragment"

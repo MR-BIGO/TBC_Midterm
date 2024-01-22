@@ -1,0 +1,16 @@
+<vector android:height="36dp" android:viewportHeight="488"
+    android:viewportWidth="488" android:width="36dp" xmlns:android="http://schemas.android.com/apk/res/android">
+    <path android:fillColor="#185B6B" android:pathData="M269.6,247.2c0,6.4 -5.6,12 -12,12h-27.2c-6.4,0 -12,-5.6 -12,-12v-86.4c0,-6.4 5.6,-12 12,-12h27.2c6.4,0 12,5.6 12,12V247.2z"/>
+    <path android:fillColor="#0B4049" android:pathData="M257.6,148.8h-27.2c-6.4,0 -12,5.6 -12,12v36c8,0 16.8,0 25.6,0s16.8,0 25.6,0v-36C269.6,154.4 264,148.8 257.6,148.8z"/>
+    <path android:fillColor="#FF5B00" android:pathData="M467.2,442.4c-9.6,-114.4 -105.6,-204 -223.2,-204S30.4,328 20.8,442.4H467.2z"/>
+    <path android:fillColor="#ED4214" android:pathData="M20.8,442.4h446.4c-9.6,-114.4 -105.6,-204 -223.2,-204"/>
+    <path android:fillColor="#FF5B00" android:pathData="M20.8,41.6C30.4,156 126.4,167.2 244,167.2S457.6,156 467.2,41.6H20.8z"/>
+    <path android:fillColor="#ED4214" android:pathData="M244,167.2c117.6,0 213.6,-11.2 223.2,-125.6H20.8"/>
+    <path android:fillColor="#B6DEE0" android:pathData="M376,442.4c-5.6,-68 -62.4,-120.8 -132,-120.8s-126.4,53.6 -132,120.8L376,442.4L376,442.4z"/>
+    <path android:fillColor="#D8EDEF" android:pathData="M376,442.4c-5.6,-68 -62.4,-108 -132,-108s-126.4,40.8 -132,108H376z"/>
+    <path android:fillColor="#FF9100" android:pathData="M488,41.6c0,6.4 -5.6,12 -12,12H12c-6.4,0 -12,-5.6 -12,-12l0,0c0,-6.4 5.6,-12 12,-12h464C482.4,29.6 488,34.4 488,41.6L488,41.6z"/>
+    <path android:fillColor="#ED4214" android:pathData="M248,424.8c0,2.4 -1.6,4 -4,4l0,0c-2.4,0 -4,-1.6 -4,-4v-75.2c0,-2.4 1.6,-4 4,-4l0,0c2.4,0 4,1.6 4,4V424.8z"/>
+    <path android:fillColor="#B6DEE0" android:pathData="M272,442.4c-1.6,-14.4 -13.6,-25.6 -28,-25.6s-27.2,11.2 -28,25.6H272z"/>
+    <path android:fillColor="#FF9100" android:pathData="M488,446.4c0,6.4 -5.6,12 -12,12H12c-6.4,0 -12,-5.6 -12,-12l0,0c0,-6.4 5.6,-12 12,-12h464C482.4,435.2 488,440 488,446.4L488,446.4z"/>
+    <path android:fillColor="#FFAA00" android:pathData="M476,435.2H12c-4,0 -8,2.4 -10.4,5.6c2.4,3.2 5.6,5.6 10.4,5.6h464c4,0 8,-2.4 9.6,-5.6C484,437.6 480.8,435.2 476,435.2z"/>
+</vector>

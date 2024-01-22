@@ -8,11 +8,13 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.tbc_midterm_project.databinding.FragmentOffersBinding
 import com.example.tbc_midterm_project.presentation.event.home.HomeEvents
 import com.example.tbc_midterm_project.presentation.event.offer.OfferEvents
 import com.example.tbc_midterm_project.presentation.screen.base.BaseFragment
+import com.example.tbc_midterm_project.presentation.screen.home.HomeFragmentArgs
 import com.example.tbc_midterm_project.presentation.state.offers.OffersState
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
@@ -22,6 +24,7 @@ class OffersFragment : BaseFragment<FragmentOffersBinding>(FragmentOffersBinding
 
     private val viewModel: OffersFragmentViewModel by viewModels()
     private lateinit var offersRecyclerAdapter: OfferItemRecyclerAdapter
+    private val args: OffersFragmentArgs by navArgs()
     override fun setUp() {
         setUpRv()
         listeners()
@@ -38,7 +41,7 @@ class OffersFragment : BaseFragment<FragmentOffersBinding>(FragmentOffersBinding
 
     private fun listeners() {
         offersRecyclerAdapter.itemOnClick = { id ->
-            viewModel.onEvent(OfferEvents.OfferPressed(id))
+            viewModel.onEvent(OfferEvents.OfferPressed(id, args.auth))
         }
         binding.btnBack.setOnClickListener {
             viewModel.onEvent(OfferEvents.BackPressed)

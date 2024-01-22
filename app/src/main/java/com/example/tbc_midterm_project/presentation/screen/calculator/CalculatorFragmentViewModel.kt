@@ -29,10 +29,10 @@ class CalculatorFragmentViewModel @Inject constructor(private val calculateUseCa
     init {
         var data: MutableList<AnswerItem>? = mutableListOf()
         data?.apply {
-            add(AnswerItem("Body mass index", R.drawable.ic_scale))
-            add(AnswerItem("Max heart rate", R.drawable.ic_scale))
-            add(AnswerItem("Ideal weight (kg)", R.drawable.ic_scale))
-            add(AnswerItem("Water intake (liters)", R.drawable.ic_scale))
+            add(AnswerItem("Body mass index", R.drawable.ic_meter))
+            add(AnswerItem("Max heart rate", R.drawable.ic_heart))
+            add(AnswerItem("Ideal weight (kg)", R.drawable.ic_scale2))
+            add(AnswerItem("Water intake (liters)", R.drawable.ic_water))
         }
         _calculatorState.update { currentState -> currentState.copy(data = data) }
         data = null

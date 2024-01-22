@@ -56,7 +56,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
     }
 
     private fun navigateToOffers() {
-        findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToOffersFragment())
+        findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToOffersFragment(args.isAuthed))
     }
 
     private fun navigateToCalculator() {
