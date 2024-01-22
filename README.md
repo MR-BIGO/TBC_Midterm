@@ -9,7 +9,10 @@ The app comes with built in BMI calculator for checking and monitoring some of y
 # Examples
 
 <p>
-  
+  <img src="https://github.com/MR-BIGO/TBC_Midterm/assets/74029793/4fac58ab-735a-4a97-84fa-c74804f982ce" height="350" width="180" />
+  <img src="https://github.com/MR-BIGO/TBC_Midterm/assets/74029793/2d1c292d-0746-4d8e-a897-645d99ef21ce" height="350" width="180" />
+  <img src="https://github.com/MR-BIGO/TBC_Midterm/assets/74029793/08a69d4c-836a-43b6-8203-392b25002337" height="350" width="180" />
+  <img src="https://github.com/MR-BIGO/TBC_Midterm/assets/74029793/dcf2f10f-f7d5-400f-8477-104c9bcb4df6" height="350" width="180" />
 </p>
 
 # Libraries Used
